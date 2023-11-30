@@ -24,7 +24,7 @@ on:
       module:
         description: 'module name'
         required: true
-        default: 'firstGradleProject'
+        default: 'maven'
         type: choice
         options:
           - firstGradleProject
