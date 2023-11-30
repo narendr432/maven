@@ -27,7 +27,7 @@ on:
         default: 'maven'
         type: choice
         options:
-          - firstGradleProject
+          - maven
       testGroup:
         description: 'test group to run'
         required: true
