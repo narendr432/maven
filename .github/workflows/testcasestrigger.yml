@@ -62,11 +62,10 @@ jobs:
         uses: 'actions/cache@v2'
         with:
           path: |
-            ~/.maven/caches
-            ~/.maven/wrapper
-          key: ${{ runner.os }}-maven-v3-${{ hashFiles('**/*.maven*', '**/maven-wrapper.properties') }}
+            ~/.m2
+          key: ${{ runner.os }}-m2-v3-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-maven-v3-
+            ${{ runner.os }}-m2-v3-
 
       - name: 'Executing Tests in ${{ github.event.inputs.environment }} environment'
         id: tests  
