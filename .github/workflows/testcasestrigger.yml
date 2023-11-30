@@ -61,11 +61,12 @@ jobs:
       - name: 'Cache the build'
         uses: 'actions/cache@v2'
         with:
-          path: |
-            ~/.m2
+          path: ~/.m2
           key: ${{ runner.os }}-m2-v3-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-v3-
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots verify
 
       - name: 'Executing Tests in ${{ github.event.inputs.environment }} environment'
         id: tests  
