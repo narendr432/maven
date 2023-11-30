@@ -62,11 +62,11 @@ jobs:
         uses: 'actions/cache@v2'
         with:
           path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-v3-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+            ~/.maven/caches
+            ~/.maven/wrapper
+          key: ${{ runner.os }}-maven-v3-${{ hashFiles('**/*.maven*', '**/maven-wrapper.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-v3-
+            ${{ runner.os }}-maven-v3-
 
       - name: 'Executing Tests in ${{ github.event.inputs.environment }} environment'
         id: tests  
